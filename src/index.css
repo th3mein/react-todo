@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  html {
+    @apply bg-[#191919] bg-cover min-h-full;
+  }
+
+  .add-todo-input-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+}
