@@ -1,12 +1,12 @@
-import React from 'react'
-import { useContext } from 'react'
-import DataContext from '../context/DataContext'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { setFilter } from './todosSlice'
+import type { RootState } from '../../app/store'
 import { MdListAlt } from 'react-icons/md'
 import { BsListCheck, BsListTask } from 'react-icons/bs'
-const TodoFilter = () => {
-  const { todoFilter, setTodoFilter } = useContext(DataContext)
 
+const TodoFilter = () => {
+  const todoFilter = useSelector((state: RootState) => state.todos.filter)
+  const dispatch = useDispatch()
   return (
     <ul className='flex text-md mb-4'>
       <li>
@@ -16,7 +16,7 @@ const TodoFilter = () => {
               ? 'text-blue-400 border-b-2 border-solid border-blue-400'
               : ''
           }`}
-          onClick={() => setTodoFilter('all')}
+          onClick={() => dispatch(setFilter('all'))}
         >
           <MdListAlt className='mr-2' />
           <label> All Tasks</label>
@@ -29,7 +29,7 @@ const TodoFilter = () => {
               ? 'text-blue-400 border-b-2 border-solid border-blue-400'
               : ''
           }`}
-          onClick={() => setTodoFilter('completed')}
+          onClick={() => dispatch(setFilter('completed'))}
         >
           <BsListCheck className='mr-2' />
           <label> Completed</label>
@@ -42,7 +42,7 @@ const TodoFilter = () => {
               ? 'text-blue-400 border-b-2 border-solid border-blue-400'
               : ''
           }`}
-          onClick={() => setTodoFilter('pending')}
+          onClick={() => dispatch(setFilter('pending'))}
         >
           <BsListTask className='mr-2' />
           <label> Pending</label>

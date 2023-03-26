@@ -5,7 +5,7 @@ const Missing = () => {
     <div className='m-auto w-full fixed h-full grid bg-black justify-center'>
       <img
         className='max-h-[400px] m-auto'
-        src='./images/error.jpg'
+        src='./src/images/error.jpg'
         alt='Page not found'
       />
       <Link to='/' className='text-gray-400 align-middle text-center'>

@@ -1,11 +1,11 @@
 import React from 'react'
 
-import AddTodoForm from './AddTodoForm'
-import TodoList from './TodoList'
+import NewTodo from '../features/todos/NewTodo'
+import TodoList from '../features/todos/TodosList'
 const Home = () => {
   return (
     <div className='p-8 max-w-2xl mx-auto'>
-      <AddTodoForm />
+      <NewTodo />
       <TodoList />
     </div>
   )

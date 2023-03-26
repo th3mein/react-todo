@@ -4,8 +4,6 @@ const Layout = () => {
 
   return (
     <div className='w-full'>
-      {location.pathname !== '/missing' && <>Layout</>}
-
       <Outlet />
     </div>
   )
